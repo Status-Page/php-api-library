@@ -26,6 +26,7 @@ class General
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPing(){
-        return $this->client->get('ping');
+        $response = $this->client->get('ping');
+        return $response->getBody();
     }
 }
