@@ -3,6 +3,7 @@
 namespace StatusPageAPI\Methods;
 
 use GuzzleHttp\Client;
+use StatusPageAPI\Models\General\PongModel;
 
 class General
 {
@@ -23,10 +24,11 @@ class General
     /**
      * GET /api/v1/ping
      *
+     * @return PongModel
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPing(){
         $response = $this->client->get('ping');
-        return $response->getBody();
+        return json_decode($response->getBody(), PongModel::class);
     }
 }
