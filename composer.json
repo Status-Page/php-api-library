@@ -13,5 +13,10 @@
             "email": "admin@herrtxbias.net"
         }
     ],
-    "minimum-stability": "dev"
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "StatusPageAPI\\": "src/StatusPage/"
+        }
+    }
 }
