@@ -12,6 +12,11 @@ class Version
     private $client;
 
     /**
+     * @var string $data
+     */
+    public $data;
+
+    /**
      * @var \StatusPageAPI\Models\General\Meta $meta
      */
     public $meta;
@@ -25,11 +30,8 @@ class Version
     {
         $this->client = $client;
 
-        if(isset($data->data)){
-            $data = $data->data;
-        }
-
-        $this->message = $data->message;
+        $this->data = $data->data->message;
+        $this->meta = new Meta($data->meta);
     }
 }
 
@@ -44,6 +46,16 @@ class Meta {
      * @var \StatusPageAPI\Models\General\Git $git
      */
     public $git;
+
+    /**
+     * Pong constructor.
+     * @param $data
+     */
+    public function __construct($data)
+    {
+        $this->on_latest = $data->on_latest;
+        $this->git = $data->git;
+    }
 }
 
 class Git {
@@ -57,4 +69,14 @@ class Git {
      * @var string $last_tag
      */
     public $last_tag;
+
+    /**
+     * Pong constructor.
+     * @param $data
+     */
+    public function __construct($data)
+    {
+        $this->tag = $data->tag;
+        $this->last_tag = $data->last_tag;
+    }
 }
