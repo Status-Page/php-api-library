@@ -3,7 +3,7 @@
 namespace StatusPageAPI\Methods;
 
 use GuzzleHttp\Client;
-use StatusPageAPI\Models\General\PongModel;
+use StatusPageAPI\Models\General\Pong;
 
 class General
 {
@@ -24,7 +24,7 @@ class General
     /**
      * GET /api/v1/ping
      *
-     * @return PongModel
+     * @return Pong
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPing(){
