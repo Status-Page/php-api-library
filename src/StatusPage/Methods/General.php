@@ -31,6 +31,10 @@ class General
      *
      * @return PongModel
      * @throws \GuzzleHttp\Exception\GuzzleException
+     * @throws \Karriere\JsonDecoder\Exceptions\InvalidBindingException
+     * @throws \Karriere\JsonDecoder\Exceptions\InvalidJsonException
+     * @throws \Karriere\JsonDecoder\Exceptions\JsonValueException
+     * @throws \Karriere\JsonDecoder\Exceptions\NotExistingRootException
      */
     public function getPing(){
         $response = $this->client->get('ping');
