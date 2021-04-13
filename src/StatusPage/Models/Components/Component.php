@@ -41,7 +41,7 @@ class Component
 
     public function save(){
         $data = (object) array_filter((array) $this, function ($val) {
-            return is_null($val);
+            return !is_null($val);
         });
 
         $this->client->patch('components/'.$this->id, [
