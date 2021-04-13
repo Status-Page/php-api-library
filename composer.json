@@ -5,7 +5,7 @@
     "require": {
         "php": ">=7.4",
         "guzzlehttp/guzzle": "^7.0",
-        "karriere/json-decoder": "dev-master"
+        "karriere/json-decoder": "^v2.2.1"
     },
     "license": "Apache-2.0",
     "authors": [
