@@ -11,7 +11,7 @@ class Component
      */
     private $client;
 
-    public $id;
+    protected $id;
     public $name;
     public $link;
     public $description;
@@ -22,8 +22,8 @@ class Component
     public $status_id;
     public $order;
     public $user;
-    public $created_at;
-    public $updated_at;
+    protected $created_at;
+    protected $updated_at;
 
     /**
      * Component constructor.
@@ -40,8 +40,12 @@ class Component
     }
 
     public function save(){
+        $data = (object) array_filter((array) $this, function ($val) {
+            return is_null($val);
+        });
+
         $this->client->patch('components/'.$this->id, [
-            'body' => json_encode(get_object_vars($this))
+            'body' => json_encode($data)
         ]);
     }
 
