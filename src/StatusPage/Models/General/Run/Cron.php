@@ -1,10 +1,12 @@
 <?php
 
 
-namespace StatusPageAPI\Models\General;
+namespace StatusPageAPI\Models\General\Run;
 
 
-class Pong
+use GuzzleHttp\Client;
+
+class Cron
 {
     /**
      * @var \GuzzleHttp\Client $client
@@ -12,15 +14,16 @@ class Pong
     private $client;
 
     /**
-     * @var string $message The message, returned by the API
+     * @var string $message
      */
     public $message;
 
     /**
      * Pong constructor.
      * @param \GuzzleHttp\Client $client
+     * @param $data
      */
-    public function __construct($client, $data)
+    public function __construct(Client $client, $data)
     {
         $this->client = $client;
 

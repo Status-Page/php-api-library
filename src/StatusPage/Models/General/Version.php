@@ -4,7 +4,7 @@
 namespace StatusPageAPI\Models\General;
 
 
-class Pong
+class Version
 {
     /**
      * @var \GuzzleHttp\Client $client
@@ -12,13 +12,14 @@ class Pong
     private $client;
 
     /**
-     * @var string $message The message, returned by the API
+     * @var \StatusPageAPI\Models\General\Meta $meta
      */
-    public $message;
+    public $meta;
 
     /**
      * Pong constructor.
      * @param \GuzzleHttp\Client $client
+     * @param $data
      */
     public function __construct($client, $data)
     {
@@ -30,4 +31,30 @@ class Pong
 
         $this->message = $data->message;
     }
+}
+
+class Meta {
+
+    /**
+     * @var bool $on_latest
+     */
+    public $on_latest;
+
+    /**
+     * @var \StatusPageAPI\Models\General\Git $git
+     */
+    public $git;
+}
+
+class Git {
+
+    /**
+     * @var string $tag
+     */
+    public $tag;
+
+    /**
+     * @var string $last_tag
+     */
+    public $last_tag;
 }
