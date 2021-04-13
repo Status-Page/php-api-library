@@ -1,0 +1,17 @@
+{
+    "name": "status-page/php-api-library",
+    "description": "A PHP Library for the Status-Page",
+    "type": "library",
+    "require": {
+        "php": ">=7.4",
+        "guzzlehttp/guzzle": "^7.0"
+    },
+    "license": "Apache-2.0",
+    "authors": [
+        {
+            "name": "HerrTxbias",
+            "email": "admin@herrtxbias.net"
+        }
+    ],
+    "minimum-stability": "dev"
+}
