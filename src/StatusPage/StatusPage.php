@@ -14,12 +14,14 @@ class StatusPage
 
     /**
      * StatusPage constructor.
-     * @param string $url
+     * @param string $domain The Domain Name of the Status Page
+     * @param string $api_key Your API Key
+     * @param bool $secure Whether you want to use https or http as protocol. Note: $secure = true is recommended!
      */
-    public function __construct($url, $api_key)
+    public function __construct($domain, $api_key, $secure = true)
     {
         $this->client = new Client([
-            'base_uri' => $url.'/api/v1/',
+            'base_uri' => ($secure ? 'https://' : 'http://').$domain.'/api/v1/',
             'headers' => [
                 'Authorization' => 'Bearer '.$api_key,
                 'Accept' => 'application/json'
