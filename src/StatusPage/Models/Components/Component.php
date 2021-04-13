@@ -15,10 +15,10 @@ class Component
     public $name;
     public $link;
     public $description;
-    public $group;
+    protected $group;
     public $group_id;
     public $visibility;
-    public $status;
+    protected $status;
     public $status_id;
     public $order;
     public $user;
@@ -37,5 +37,19 @@ class Component
         foreach ($data as $key => $value){
             $this->$key = $value;
         }
+    }
+
+    public function save(){
+        $this->client->patch('components/'.$this->id, [
+            'body' => json_encode(get_object_vars($this))
+        ]);
+    }
+
+    /**
+     * @return string Response
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
+    public function delete(){
+        return json_decode($this->client->delete('components/'.$this->id)->getBody());
     }
 }

@@ -26,7 +26,8 @@ class StatusPage
             'base_uri' => ($secure ? 'https://' : 'http://').$domain.'/api/v1/',
             'headers' => [
                 'Authorization' => 'Bearer '.$api_key,
-                'Accept' => 'application/json'
+                'Accept' => 'application/json',
+                'Content-Typ' => 'application/json'
             ]
         ]);
     }
