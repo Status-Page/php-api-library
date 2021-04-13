@@ -8,15 +8,17 @@ class User
      * @var \GuzzleHttp\Client $client
      */
     private $client;
-
     public $id;
     public $name;
     public $email;
     public $deactivated;
+    public $system;
     public $email_verified_at;
     public $current_team_id;
     public $profile_photo_path;
     public $profile_photo_url;
+    public $permissions;
+    public $roles;
     public $created_at;
     public $updated_at;
 
@@ -34,8 +36,7 @@ class User
         }
 
         foreach ($data as $key => $value){
-            if(property_exists($this, $this->$key))
-                $this->$key = $value;
+            $this->$key = $value;
         }
     }
 }
