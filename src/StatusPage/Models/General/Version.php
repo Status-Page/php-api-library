@@ -30,7 +30,7 @@ class Version
     {
         $this->client = $client;
 
-        $this->data = $data->data->message;
+        $this->data = $data->data;
         $this->meta = new Meta($data->meta);
     }
 }
