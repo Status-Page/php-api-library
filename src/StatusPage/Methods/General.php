@@ -3,7 +3,6 @@
 namespace StatusPageAPI\Methods;
 
 use GuzzleHttp\Client;
-use Karriere\JsonDecoder\JsonDecoder;
 use StatusPageAPI\Models\General\PongModel;
 
 class General
@@ -13,8 +12,6 @@ class General
      */
     private $client;
 
-    private $decoder;
-
     /**
      * General constructor.
      * @param Client $client
@@ -22,8 +19,6 @@ class General
     public function __construct($client)
     {
         $this->client = $client;
-
-        $this->decoder = new JsonDecoder();
     }
 
     /**
@@ -31,13 +26,9 @@ class General
      *
      * @return PongModel
      * @throws \GuzzleHttp\Exception\GuzzleException
-     * @throws \Karriere\JsonDecoder\Exceptions\InvalidBindingException
-     * @throws \Karriere\JsonDecoder\Exceptions\InvalidJsonException
-     * @throws \Karriere\JsonDecoder\Exceptions\JsonValueException
-     * @throws \Karriere\JsonDecoder\Exceptions\NotExistingRootException
      */
     public function getPing(){
         $response = $this->client->get('ping');
-        return $this->decoder->decode($response->getBody(), PongModel::class, "data");
+        return json_decode($response->getBody())->data;
     }
 }
