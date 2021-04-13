@@ -31,6 +31,9 @@ class Components
         $response = $this->client->get('components');
         $data = json_decode($response->getBody());
 
+        if(isset($data->data))
+            $data = $data->data;
+
         foreach ($data as $c){
             $toReturn[] = new Component($this->client, $c);
         }
