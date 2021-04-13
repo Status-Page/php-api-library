@@ -4,6 +4,7 @@ namespace StatusPageAPI;
 
 use GuzzleHttp\Client;
 use StatusPageAPI\Methods\General;
+use StatusPageAPI\Methods\Users;
 
 class StatusPage
 {
@@ -31,5 +32,9 @@ class StatusPage
 
     public function general(){
         return new General($this->client);
+    }
+
+    public function users(){
+        return new Users($this->client);
     }
 }
