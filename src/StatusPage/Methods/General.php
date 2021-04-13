@@ -29,6 +29,6 @@ class General
      */
     public function getPing(){
         $response = $this->client->get('ping');
-        return json_decode($response->getBody())->data;
+        return json_decode($response->getBody());
     }
 }
