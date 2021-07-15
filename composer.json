@@ -1,5 +1,6 @@
 {
     "name": "status-page/php-api-library",
+    "version": "0.1.0",
     "description": "A PHP Library for the Status-Page",
     "type": "library",
     "require": {
