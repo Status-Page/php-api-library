@@ -38,7 +38,6 @@ class Adapter
 
     public function __call(string $name, array $arguments)
     {
-        print_r($name);
         if ($name == $this->sub_adapter_path && isset($arguments[0])){
             $id = $arguments[0];
             return new Adapter($this->client, $this->path.'/'.$id.'/'.$this->sub_adapter_path);
