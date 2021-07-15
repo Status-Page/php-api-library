@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "58db8964dcbf10f4971aff293d1e103c",
+    "content-hash": "94ca8aa60b812f94a23a9dedeea0c4eb",
     "packages": [
         {
             "name": "guzzlehttp/guzzle",
@@ -172,12 +172,12 @@
             "source": {
                 "type": "git",
                 "url": "https://github.com/guzzle/psr7.git",
-                "reference": "c0dcda9f54d145bd4d062a6d15f54931a67732f9"
+                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/guzzle/psr7/zipball/c0dcda9f54d145bd4d062a6d15f54931a67732f9",
-                "reference": "c0dcda9f54d145bd4d062a6d15f54931a67732f9",
+                "url": "https://api.github.com/repos/guzzle/psr7/zipball/1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
+                "reference": "1dc8d9cba3897165e16d12bb13d813afb1eb3fe7",
                 "shasum": ""
             },
             "require": {
@@ -243,33 +243,33 @@
             ],
             "support": {
                 "issues": "https://github.com/guzzle/psr7/issues",
-                "source": "https://github.com/guzzle/psr7/tree/2.0.0-beta1"
+                "source": "https://github.com/guzzle/psr7/tree/2.0.0"
             },
-            "time": "2021-03-21T17:21:36+00:00"
+            "time": "2021-06-30T20:03:07+00:00"
         },
         {
             "name": "karriere/json-decoder",
-            "version": "dev-master",
+            "version": "v2.2.1",
             "source": {
                 "type": "git",
                 "url": "https://github.com/karriereat/json-decoder.git",
-                "reference": "3ee234c425e4ab690e8a8b5b544601999ccd5ed9"
+                "reference": "bb720a787be00acc5a74d7e1e2e30823a12bc292"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/karriereat/json-decoder/zipball/3ee234c425e4ab690e8a8b5b544601999ccd5ed9",
-                "reference": "3ee234c425e4ab690e8a8b5b544601999ccd5ed9",
+                "url": "https://api.github.com/repos/karriereat/json-decoder/zipball/bb720a787be00acc5a74d7e1e2e30823a12bc292",
+                "reference": "bb720a787be00acc5a74d7e1e2e30823a12bc292",
                 "shasum": ""
             },
             "require": {
-                "php": ">=7.3",
-                "php-di/phpdoc-reader": "^2.1"
+                "php": ">=7.0"
             },
             "require-dev": {
-                "friendsofphp/php-cs-fixer": "^2.16",
-                "phpunit/phpunit": "^8.0 || ^9.0"
+                "karriere/code-quality": "^3.0",
+                "sebastian/comparator": "^1.1",
+                "sebastian/exporter": "^2.0",
+                "sebastian/recursion-context": "^2.0"
             },
-            "default-branch": true,
             "type": "library",
             "autoload": {
                 "psr-4": {
@@ -294,51 +294,9 @@
             ],
             "support": {
                 "issues": "https://github.com/karriereat/json-decoder/issues",
-                "source": "https://github.com/karriereat/json-decoder/tree/v4.0.3"
+                "source": "https://github.com/karriereat/json-decoder/tree/master"
             },
-            "time": "2020-11-30T07:01:35+00:00"
-        },
-        {
-            "name": "php-di/phpdoc-reader",
-            "version": "2.2.1",
-            "source": {
-                "type": "git",
-                "url": "https://github.com/PHP-DI/PhpDocReader.git",
-                "reference": "66daff34cbd2627740ffec9469ffbac9f8c8185c"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://api.github.com/repos/PHP-DI/PhpDocReader/zipball/66daff34cbd2627740ffec9469ffbac9f8c8185c",
-                "reference": "66daff34cbd2627740ffec9469ffbac9f8c8185c",
-                "shasum": ""
-            },
-            "require": {
-                "php": ">=7.2.0"
-            },
-            "require-dev": {
-                "mnapoli/hard-mode": "~0.3.0",
-                "phpunit/phpunit": "^8.5|^9.0"
-            },
-            "type": "library",
-            "autoload": {
-                "psr-4": {
-                    "PhpDocReader\\": "src/PhpDocReader"
-                }
-            },
-            "notification-url": "https://packagist.org/downloads/",
-            "license": [
-                "MIT"
-            ],
-            "description": "PhpDocReader parses @var and @param values in PHP docblocks (supports namespaced class names with the same resolution rules as PHP)",
-            "keywords": [
-                "phpdoc",
-                "reflection"
-            ],
-            "support": {
-                "issues": "https://github.com/PHP-DI/PhpDocReader/issues",
-                "source": "https://github.com/PHP-DI/PhpDocReader/tree/2.2.1"
-            },
-            "time": "2020-10-12T12:39:22+00:00"
+            "time": "2019-03-05T10:26:22+00:00"
         },
         {
             "name": "psr/http-client",
@@ -551,14 +509,12 @@
     "packages-dev": [],
     "aliases": [],
     "minimum-stability": "dev",
-    "stability-flags": {
-        "karriere/json-decoder": 20
-    },
+    "stability-flags": [],
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {
         "php": ">=7.4"
     },
     "platform-dev": [],
-    "plugin-api-version": "2.0.0"
+    "plugin-api-version": "2.1.0"
 }

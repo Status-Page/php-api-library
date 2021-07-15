@@ -26,33 +26,33 @@ class General
     /**
      * GET /api/v1/ping
      *
-     * @return Pong
+     * @return \stdClass
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getPing(){
         $response = $this->client->get('ping');
-        return new Pong($this->client, json_decode($response->getBody()));
+        return json_decode($response->getBody());
     }
 
     /**
      * GET /api/v1/version
      *
-     * @return \StatusPageAPI\Models\General\Version
+     * @return \stdClass
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function getVersion(){
         $response = $this->client->get('version');
-        return new Version($this->client, json_decode($response->getBody()));
+        return json_decode($response->getBody());
     }
 
     /**
      * POST /api/v1/run/cron
      *
-     * @return \StatusPageAPI\Models\General\Run\Cron
+     * @return \stdClass
      * @throws \GuzzleHttp\Exception\GuzzleException
      */
     public function postRunCron(){
         $response = $this->client->post('run/cron');
-        return new Cron($this->client, json_decode($response->getBody()));
+        return json_decode($response->getBody());
     }
 }
