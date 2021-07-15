@@ -7,6 +7,12 @@ use GuzzleHttp\Client;
 use GuzzleHttp\Exception\GuzzleException;
 use stdClass;
 
+/**
+ * Class Adapter
+ * @package StatusPageAPI\Methods
+ * @method Adapter updates($id) Method available only on following paths: incidents, maintenances
+ * @method Adapter points($id) Method available only on following paths: metrics
+ */
 class Adapter
 {
     /**

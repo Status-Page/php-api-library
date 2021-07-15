@@ -51,4 +51,16 @@ class StatusPage
     public function incidents(){
         return new Adapter($this->client, 'incidents', 'updates');
     }
+
+    public function maintenances(){
+        return new Adapter($this->client, 'maintenances', 'updates');
+    }
+
+    public function metrics(){
+        return new Adapter($this->client, 'metrics', 'points');
+    }
+
+    public function subscribers(){
+        return new Adapter($this->client, 'subscribers');
+    }
 }
