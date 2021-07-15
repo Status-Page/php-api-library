@@ -3,9 +3,6 @@
 namespace StatusPageAPI\Methods;
 
 use GuzzleHttp\Client;
-use StatusPageAPI\Models\General\Pong;
-use StatusPageAPI\Models\General\Run\Cron;
-use StatusPageAPI\Models\General\Version;
 
 class General
 {

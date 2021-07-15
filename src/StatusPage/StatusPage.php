@@ -3,7 +3,7 @@
 namespace StatusPageAPI;
 
 use GuzzleHttp\Client;
-use StatusPageAPI\Methods\Components;
+use StatusPageAPI\Methods\Adapter;
 use StatusPageAPI\Methods\General;
 use StatusPageAPI\Methods\Users;
 
@@ -41,6 +41,14 @@ class StatusPage
     }
 
     public function components(){
-        return new Components($this->client);
+        return new Adapter($this->client, 'components');
+    }
+
+    public function componentGroups(){
+        return new Adapter($this->client, 'components-groups');
+    }
+
+    public function incidents(){
+        return new Adapter($this->client, 'incidents', 'updates');
     }
 }

@@ -3,8 +3,6 @@
 
 namespace StatusPageAPI\Methods;
 
-use StatusPageAPI\Models\Users\User;
-
 class Users
 {
     /**
