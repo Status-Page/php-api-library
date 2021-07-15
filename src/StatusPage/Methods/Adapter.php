@@ -28,11 +28,13 @@ class Adapter
         $this->client = $client;
         $this->path = $path;
         $this->sub_adapter_path = $sub_adapter_path;
+    }
 
-        if($sub_adapter_path != ''){
-            $this->$sub_adapter_path = function ($id) {
-                return new Adapter($this->client, $this->path.'/'.$id.'/'.$this->sub_adapter_path);
-            };
+    public function __call(string $name, array $arguments)
+    {
+        if ($name == $this->sub_adapter_path && isset($arguments[0])){
+            $id = $arguments[0];
+            return new Adapter($this->client, $this->path.'/'.$id.'/'.$this->sub_adapter_path);
         }
     }
 
