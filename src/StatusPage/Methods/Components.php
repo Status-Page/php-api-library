@@ -23,21 +23,7 @@ class Components
     }
 
     public function getComponents(){
-        /**
-         * @var Component[] $toReturn
-         */
-        $toReturn = [];
-
         $response = $this->client->get('components');
-        $data = json_decode($response->getBody());
-
-        if(isset($data->data))
-            $data = $data->data;
-
-        foreach ($data as $c){
-            $toReturn[] = new Component($this->client, $c);
-        }
-
-        return $toReturn;
+        return json_decode($response->getBody());
     }
 }

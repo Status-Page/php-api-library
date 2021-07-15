@@ -21,9 +21,14 @@ class Users
         $this->client = $client;
     }
 
+    /**
+     * Gets the current Authorized User
+     * @return \stdClass
+     * @throws \GuzzleHttp\Exception\GuzzleException
+     */
     public function getUser(){
         $response = $this->client->get('user');
-        return new User($this->client, json_decode($response->getBody()));
+        return json_decode($response->getBody());
     }
 
 }
